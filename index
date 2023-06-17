@@ -1,0 +1,50 @@
+var ek = B({
+            menuitem: !0
+        }, {
+            area: !0,
+            base: !0,
+            br: !0,
+            col: !0,
+            embed: !0,
+            hr: !0,
+            img: !0,
+            input: !0,
+            keygen: !0,
+            link: !0,
+            meta: !0,
+            param: !0,
+            source: !0,
+            track: !0,
+            wbr: !0
+        });
+        function ew(e, n) {
+            if (n) {
+                if (ek[e] && (null != n.children || null != n.dangerouslySetInnerHTML))
+                    throw Error(f(137, e));
+                if (null != n.dangerouslySetInnerHTML) {
+                    if (null != n.children)
+                        throw Error(f(60));
+                    if ("object" != typeof n.dangerouslySetInnerHTML || !("__html"in n.dangerouslySetInnerHTML))
+                        throw Error(f(61))
+                }
+                if (null != n.style && "object" != typeof n.style)
+                    throw Error(f(62))
+            }
+        }
+        function eS(e, n) {
+            if (-1 === e.indexOf("-"))
+                return "string" == typeof n.is;
+            switch (e) {
+            case "annotation-xml":
+            case "color-profile":
+            case "font-face":
+            case "font-face-src":
+            case "font-face-uri":
+            case "font-face-format":
+            case "font-face-name":
+            case "missing-glyph":
+                return !1;
+            default:
+                return !0
+            }
+        }
